@@ -21,7 +21,7 @@ sudo lgtm-up --core-only
 sudo lgtm-upgrade --action CREATE --if-not-exists --config "/etc/lgtm/config.json"
 sudo lgtm-upgrade --action CONFIGURE --config "/etc/lgtm/config.json"
 sudo lgtm-upgrade --action FULL --schema-only
-sudo lgtm-upgrade --action INITIALIZE --core "$lgtm_bundle"/lgtm/odasa-*.zip
+sudo lgtm-upgrade --action INITIALIZE
 sudo lgtm-upgrade --action VALIDATE
 sudo lgtm-upgrade --action FULL
 sudo lgtm-upgrade --action CHECK
