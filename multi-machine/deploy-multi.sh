@@ -44,7 +44,7 @@ done
 >&2 echo "Initializing LGTM..."
 for host_directory in "$lgtm_bundle/generated/"*; do
 	while read -r package; do
-		if [ "$package" = "lgtm-utils" ]; then
+		if [ "$package" = "lgtm-upgrade" ]; then
 			host=$(basename "$host_directory")
 			>&2 echo "Using host $host as coordinator..."
 			temp_dir=$(ssh "$host" -- mktemp --directory --suffix "-lgtm-deployment")
@@ -56,7 +56,7 @@ for host_directory in "$lgtm_bundle/generated/"*; do
 			ssh "$host" -- sudo lgtm-upgrade --action CREATE --if-not-exists --config "/etc/lgtm/config.json" < /dev/null
 			ssh "$host" -- sudo lgtm-upgrade --action CONFIGURE --config "/etc/lgtm/config.json" < /dev/null
 			ssh "$host" -- sudo lgtm-upgrade --action FULL --schema-only < /dev/null
-			ssh "$host" -- sudo lgtm-upgrade --action INITIALIZE --core "$temp_dir/lgtm/odasa-*.zip" < /dev/null
+			ssh "$host" -- sudo lgtm-upgrade --action INITIALIZE < /dev/null
 			ssh "$host" -- sudo lgtm-upgrade --action VALIDATE < /dev/null
 			ssh "$host" -- sudo lgtm-upgrade --action FULL < /dev/null
 			ssh "$host" -- sudo lgtm-upgrade --action CHECK < /dev/null
