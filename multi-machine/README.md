@@ -30,8 +30,8 @@ alongside an untarred LGTM installation bundle and the
 ```shellsession
 .
 ├── deploy-multi.sh
-├── lgtm-1.20.0
-├── lgtm-1.20.0.tar.gz
+├── lgtm-<version>
+├── lgtm-<version>-<platform>.tar.gz
 └── state
     ├── lgtm-cluster-config.yml
     └── manifest.xml
