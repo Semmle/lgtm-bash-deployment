@@ -7,9 +7,14 @@ simple cluster configuration file, placing all components on this
 machine:
 
 ```shellsession
-java -jar <path to config gen>/lgtm-config-gen.jar init
-LGTM_CREDENTIALS_PASSWORD=password java -jar <path to config gen>/lgtm-config-gen.jar generate
+java -jar <path to release>/lgtm/lgtm-config-gen.jar init
+LGTM_CREDENTIALS_PASSWORD=password java -jar <path to release>/lgtm/lgtm-config-gen.jar generate --overwrite
 ```
+
+The above commands create two directories:
+
+* A `state` directory in the same directory as `<path to release>`
+* A `generated` directory at `<path to release>/generated` (in this example, the `generated` directory is not used)
 
 At this point, the resulting `state` directory contains the two files
 that describe how to deploy an LGTM installation:
@@ -36,8 +41,8 @@ machine alongside an untarred LGTM installation bundle and the
 ```shellsession
 .
 ├── deploy-single.sh
-├── lgtm-1.20.0
-├── lgtm-1.20.0.tar.gz
+├── lgtm-<version>
+├── lgtm-<version>-<platform>.tar.gz
 └── state
     ├── lgtm-cluster-config.yml
     └── manifest.xml
