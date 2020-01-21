@@ -26,9 +26,9 @@ state/
 ```
 
 We suggest that you store these files in version control. You can also
-modify the cluster configuration file, for example to specify another
-external URL, or to add an SSL certificate. You can find more
-information [in the LGTM administrator
+modify the cluster configuration file, for example to adjust the
+number of workers. You can find more information [in the LGTM
+administrator
 help](https://help.semmle.com/lgtm-enterprise/admin/help/sys-admin/lgtm-cluster-config.html).
 
 
